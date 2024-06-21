@@ -1,0 +1,224 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to freedom wall, post a message here anonymously!">
+    <title>Freedom Wall | Post a message anonymously!</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+	<style>
+	@import url('https://fonts.googleapis.com/css2?family=Nerko+One&family=Poppins:wght@300&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #ffffff;
+}
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav {
+    position: fixed;
+    top: 0;
+    height: 3rem;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+.nav h1 {
+    margin: 0.4rem 1rem;
+    color: #8083ff;
+    font-family: 'Nerko One', cursive;
+}
+.nav .btn_menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #BAC3CD;
+    font-size: 24px;
+    margin: 0.8rem 1rem;
+}
+.nav .btn_menu_opened {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #8083ff;
+    font-size: 24px;
+    margin: 0.8rem 1rem;
+    display: none;
+}
+.menu {
+    position: fixed;
+    top: 0;
+    background-color: #ffffff;
+    height: 13rem;
+    width: 10rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    border-radius: 0 0 12px 0;
+    text-align: center;
+    display: none;
+}
+.menu h3 {
+    text-align: left;
+    margin: 0.5rem 0.5rem;
+    font-size: 24px;
+    margin-bottom: 1rem;
+    color: #8083ff;
+    font-family: 'Nerko One', cursive;
+}
+.menu ul li {
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+    margin-top: 0.3remrem;
+}
+.menu ul li a {
+    text-decoration: none;
+    color: #BAC3CD;
+    transition: 0.5s;
+    font-family: 'Poppins', sans-serif;
+}
+.menu ul li a:hover {
+    color: #8083ff;
+}
+.message-area {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+    text-align: center;
+    padding-bottom: 7rem;
+    background-color: white;
+}
+.message-area input[type=text] {
+    width: 90%;
+    padding-left: 5%;
+    padding-right: 15%;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    height: 2.5rem;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    color: #a9a9a9;
+    transition: 0.3s;
+}
+.message-area input[type=text]::placeholder {
+    color: #BAC3CD;
+}
+.message-area button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0.6rem 10%;
+    border: none;
+    background: transparent;
+    font-size: 22px;
+    color: #BAC3CD;
+}
+.banner {
+    background: #ffffff;
+    width: 90%;
+    height: 12rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    border-radius: 12px;
+    margin-top: 6rem;
+}
+.banner h1 {
+    color: #BAC3CD;
+    text-align: center;
+    font-size: 22px;
+    margin-top: 2.5rem;    
+    font-family: 'Nerko One', cursive;
+}
+.banner p {
+    text-align: center;
+    font-size: 14px;
+    color: #BAC3CD;
+    margin: 1rem 0.5rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.goToFeed {
+    width: 100%;
+    height: 3rem;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.goToFeed button {
+    border: none;
+    background: white;
+    width: 90%;
+    height: 2.3rem;
+    font-weight: 400;
+    font-size: 18px;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    transition: 0.5s;
+    color: #BAC3CD;
+}
+.goToFeed button:hover {
+    opacity: 0.7;
+}
+
+	</style>
+
+    <div class="nav">
+        <h1>Freedom Wall</h1>
+        <i class="ri-menu-3-line btn_menu"></i>
+        <i class="ri-menu-2-line btn_menu_opened"></i>
+    </div>
+    <div class="menu">
+        <h3>Menu</h3>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/feed">Feed</a></li>
+            <li><a href="https://github.com/libyzxy0">Github</a></li>
+        </ul>
+    </div>
+    <div class="center">
+    <div class="banner">
+        <h1>Hi there, <%= name %> Welcome to FreedomWall</h1>
+        <p>I hope you enjoy reading someone's messages here!</p>
+    </div>
+    </div>
+    
+    
+    <div class="goToFeed">
+        <button onclick="window.location.href='/feed'">Feed</button>
+    </div>
+    
+    
+    <div class="message-area">
+        <form action="/upload" method="post">
+        <input type="text" id="message" name="message" placeholder="Enter a message." autocomplete="off">
+        <button type="submit"><i class="ri-send-plane-fill"></i></button>
+        </form>
+    </div>
+    <script>
+var btnMenu = document.querySelector(".btn_menu");
+var btnMenuOpened = document.querySelector(".btn_menu_opened");
+var menu = document.querySelector(".menu");
+btnMenu.addEventListener("click", function() {
+   btnMenu.style.display="none"
+  btnMenuOpened.style.display="block";
+  menu.style.display="block"; 
+});  
+btnMenuOpened.addEventListener("click", function() {
+  btnMenu.style.display="block"
+  btnMenuOpened.style.display="none";
+  menu.style.display="none";
+});
+</script>
+</body>
+</html>
